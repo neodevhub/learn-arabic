@@ -6,7 +6,7 @@ import AdminUser from "../models/AdminUser";
 dotenv.config();
 
 const createAdmin = async () => {
-  await mongoose.connect(process.env.MONGO_URI || "mongodb://127.0.0.1:27017/learn-arabic");
+  await mongoose.connect(process.env.MONGO_URI || "mongodb+srv://neodevhub_db_user:fyma3XzyIkf1e34B@cluster0.jjkxwuz.mongodb.net/?appName=Cluster0");
 
   const username = "admin";
   const password = "admin123";
@@ -30,3 +30,8 @@ createAdmin().catch((err) => {
   console.error(err);
   process.exit(1);
 });
+
+// To run this script that adds admin to the DB:
+// 1- cd api
+// 2- npx ts-node scripts/createAdmin.ts
+// check the connectd database
